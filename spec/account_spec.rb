@@ -9,10 +9,9 @@ describe Account do
   end
 
   describe "deposit" do
-    xit "create a new transaction" do
-      transaction = class_double("Transaction")
-      expect(transaction).to receive(:new)
-      subject.deposit(20.50)
+    it "adds the amount to the account balance" do
+      subject.deposit(20.00)
+      expect(subject.current_balance).to eq(20.00)
     end
   end
 end

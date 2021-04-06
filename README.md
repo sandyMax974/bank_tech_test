@@ -52,12 +52,15 @@ I want to be able to see statement for my account with date, amount, balance
 
 | Object     | Transaction              | Notes |
 | ---------- | ------------------------ | ----- |
-| Attributes | @credit_amount           |       |
-|            | @debit_amount            |       |
+| Attributes | @credit_amount           |       | √
+|            | @debit_amount            |       | √
 |            | @timestamp               |       | √
-|            | @post_tansaction_balance |       |
+|            | @post_tansaction_balance |       | √
 | Method     | #print_transaction       | format transaction |
 |            | #generate_timestamp      |       |
+
+### Edge cases
+* Inputs/Outputs are floats
 
 ## Process
 
