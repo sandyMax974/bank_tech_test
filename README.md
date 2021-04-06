@@ -59,9 +59,12 @@ I want to be able to see statement for my account with date, amount, balance
 | Method     | #print_transaction       | format transaction |
 |            | #generate_timestamp      |       |
 
-### Edge cases
-* Inputs/Outputs are floats
+### Edge cases and questions
+* Can the account go into overdraft? How much?
+* Is the user ave going to input something else than Intg or Float?
 
 ## Process
 
-* Decided to build th eprogram from the inside-out, starting with smallest object, Transaction - got blocked by this approach so decided to change tactics and approach it from Account object
+* Decided to build the program from the inside-out, starting with smallest object, Transaction
+* Got blocked by this approach so decided to change tactics and approach it from Account object
+* Now that we have a code base I have a clearer idea of potential edge case and refinement needs

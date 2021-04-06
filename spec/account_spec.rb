@@ -36,4 +36,13 @@ describe Account do
       expect { subject.withdrawal(5.00) }.to change{ subject.transactions.count }.by(1)
     end
   end
+
+  describe "#print_statement" do
+    it "outputs all the transaction line by line" do
+      message = "date || credit || debit || balance\n06-04-2021||00.00||5.00||20.00\n"
+      transaction = Transaction.new("06-04-2021", 20.00, 5.00, 0.00)
+      subject.transactions << transaction
+      expect(subject.print_statement).to output(message)
+    end
+  end
 end
