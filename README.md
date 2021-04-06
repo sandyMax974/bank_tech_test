@@ -27,16 +27,19 @@ date       || credit  || debit  || balance
 
 ```
 As a user
-I want to be able to withdraw money from my account  
+I want to be able to withdraw money from my account  √
 
 As a user
-I want to be able to deposit money on my account
+I want to be able to deposit money on my account √
 
 As a user
-I want to be able to see the time and date for all transactions  
+I want to be able to see the time and date for all transactions √
 
 As a user
-I want to be able to see statement for my account with date, amount, balance
+I want to be able to see statement for my account with date, amount, balance √
+
+As a user
+I want my account data to persist in my computer memory
 ```
 
 ## Modelling 
@@ -46,7 +49,7 @@ I want to be able to see statement for my account with date, amount, balance
 | Attributes | @balance         |                     | √
 |            | @transactions    |                     | √
 | Methods    | #show_balance    | getter              | √
-|            | #print_statement | list of transaction | 
+|            | #print_statement | list of transaction | √
 |            | #deposit         | create transaction  | √
 |            | #withdrawal      | create transaction  | √
 
@@ -56,8 +59,7 @@ I want to be able to see statement for my account with date, amount, balance
 |            | @debit_amount            |       | √
 |            | @timestamp               |       | √
 |            | @post_tansaction_balance |       | √
-| Method     | #print_transaction       | format transaction |
-|            | #generate_timestamp      |       |
+| Method     | #print_transaction       | format transaction | √
 
 ### Edge cases and questions
 * Can the account go into overdraft? How much?
@@ -68,3 +70,9 @@ I want to be able to see statement for my account with date, amount, balance
 * Decided to build the program from the inside-out, starting with smallest object, Transaction
 * Got blocked by this approach so decided to change tactics and approach it from Account object
 * Now that we have a code base I have a clearer idea of potential edge case and refinement needs
+* Now that we have a working program, I can go back and see if I can refactor - at the moment every part of the program is accessible
+
+- [ ] apply SRP to all existing methods - create methods `balance_update`, `store_transaction`
+- [ ] use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
+- [ ] change time formating
+- [ ] look for data persistence on local disk

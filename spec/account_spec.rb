@@ -33,7 +33,7 @@ describe Account do
       expect(subject.current_balance).to eq(15.00)
     end
     it "adds the transaction to the account transactions collection" do
-      expect { subject.withdrawal(5.00) }.to change{ subject.transactions.count }.by(1)
+      expect{ subject.withdrawal(5.00) }.to change{ subject.transactions.count }.by(1)
     end
   end
 
