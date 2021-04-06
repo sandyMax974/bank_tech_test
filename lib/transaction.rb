@@ -8,4 +8,8 @@ class Transaction
     @credit = credit 
   end
 
+  def print_transaction
+    puts "#{@date}||#{'%.2f' % @credit}||#{'%.2f' % @debit}||#{'%.2f' % @balance}"
+  end
+
 end

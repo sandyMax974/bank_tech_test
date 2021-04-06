@@ -43,12 +43,12 @@ I want to be able to see statement for my account with date, amount, balance
 
 | Object     | Account          | Notes               |
 | ---------- | ---------------- | ------------------- |
-| Attributes | @balance         |                     |
-|            | @transactions    |                     |
-| Methods    | #show_balance    | getter              |
-|            | #print_statement | list of transaction |
-|            | #deposit         | create transaction  |
-|            | #withdrawal      | create transaction  |
+| Attributes | @balance         |                     | √
+|            | @transactions    |                     | √
+| Methods    | #show_balance    | getter              | √
+|            | #print_statement | list of transaction | 
+|            | #deposit         | create transaction  | √
+|            | #withdrawal      | create transaction  | √
 
 | Object     | Transaction              | Notes |
 | ---------- | ------------------------ | ----- |

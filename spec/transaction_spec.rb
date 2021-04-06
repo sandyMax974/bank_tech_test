@@ -15,4 +15,11 @@ describe Transaction do
     expect(subject).to respond_to(:credit)
   end
 
+  describe "#print_transaction" do
+    it "print the transaction details in the correct format" do
+      message = "06-04-2021||0.00||5.00||20.00\n"
+      transaction = Transaction.new("06-04-2021", 20.00, 5.00, 0.00)
+      expect{ transaction.print_transaction }.to output(message).to_stdout
+    end
+  end
 end

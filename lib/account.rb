@@ -33,4 +33,9 @@ class Account
 
     @transactions << Transaction.new(date, balance, debit, credit)
   end
+
+  def print_statement
+    header = "date || credit || debit || balance"
+  end
+
 end
