@@ -21,4 +21,19 @@ describe Account do
       expect { subject.deposit(20.00) }.to change{ subject.transactions.count }.by(1)
     end
   end
+
+  describe "#withdrawal" do
+    it "creates a new transaction" do
+      expect(Transaction).to receive(:new)
+      subject.withdrawal(5.00)
+    end
+    it "removes the amount to the account balance" do
+      subject.deposit(20.00)
+      subject.withdrawal(5.00)
+      expect(subject.current_balance).to eq(15.00)
+    end
+    it "adds the transaction to the account transactions collection" do
+      expect { subject.withdrawal(5.00) }.to change{ subject.transactions.count }.by(1)
+    end
+  end
 end

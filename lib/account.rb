@@ -23,4 +23,14 @@ class Account
     @transactions << Transaction.new(date, balance, debit, credit)
   end
 
+  def withdrawal(amount)
+    @balance = @balance - amount
+
+    date = Time.now.to_s[0...10]
+    credit = 0 # or nil
+    debit = amount
+    balance = current_balance
+
+    @transactions << Transaction.new(date, balance, debit, credit)
+  end
 end
