@@ -23,17 +23,30 @@ date       || credit  || debit  || balance
 10/01/2012 || 1000.00 ||        || 1000.00
 ```
 
+### User Stories
+
+```
+As a user
+I want to be able to withdraw money from my account  
+
+As a user
+I want to be able to deposit money on my account
+
+As a user
+I want to be able to see the time and date for all transactions  
+
+As a user
+I want to be able to see statement for my account with date, amount, balance
+```
+
 ## Modelling 
 
-
-| Object     | Account             | Notes  |
-| ---------- | ------------------- | ------ |
-| Attributes | @balance            |        |
-| Methods    | #balance            | getter |
-|            | #deposit            |        |
-|            | #withdrawal         |        |
-|            | #generate_timestamp |        |
-|            | #print_statement    | list of transaction |
+| Object     | Account          | Notes               |
+| ---------- | ---------------- | ------------------- |
+| Attributes | @balance         |                     |
+|            | @transactions    |                     |
+| Methods    | #show_balance    | getter              |
+|            | #print_statement | list of transaction |
 
 | Object     | Transaction              | Notes |
 | ---------- | ------------------------ | ----- |
@@ -41,4 +54,11 @@ date       || credit  || debit  || balance
 |            | @debit_amount            |       |
 |            | @timestamp               |       |
 |            | @post_tansaction_balance |       |
-| Method     | #print_transaction       |       |
+| Method     | #print_transaction       | format transaction |
+|            | #deposit                 | create transaction |
+|            | #withdrawal              | create transaction |
+|            | #generate_timestamp      |       |
+
+## Process
+
+* Decided to build th eprogram from the inside-out, starting with smallest object
