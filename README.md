@@ -47,18 +47,18 @@ I want to be able to see statement for my account with date, amount, balance
 |            | @transactions    |                     |
 | Methods    | #show_balance    | getter              |
 |            | #print_statement | list of transaction |
+|            | #deposit         | create transaction  |
+|            | #withdrawal      | create transaction  |
 
 | Object     | Transaction              | Notes |
 | ---------- | ------------------------ | ----- |
 | Attributes | @credit_amount           |       |
 |            | @debit_amount            |       |
-|            | @timestamp               |       |
+|            | @timestamp               |       | √
 |            | @post_tansaction_balance |       |
 | Method     | #print_transaction       | format transaction |
-|            | #deposit                 | create transaction |
-|            | #withdrawal              | create transaction |
 |            | #generate_timestamp      |       |
 
 ## Process
 
-* Decided to build th eprogram from the inside-out, starting with smallest object
+* Decided to build th eprogram from the inside-out, starting with smallest object, Transaction - got blocked by this approach so decided to change tactics and approach it from Account object
