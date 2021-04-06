@@ -4,7 +4,11 @@ class Account
     @balance = 0
   end
 
-  def show_balance
+  def current_balance
     @balance
+  end
+
+  def deposit(amount)
+    Transaction.new(amount)
   end
 end
