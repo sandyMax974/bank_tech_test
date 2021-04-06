@@ -36,6 +36,8 @@ class Account
 
   def print_statement
     header = "date || credit || debit || balance"
+    puts header
+    @transactions.each { |transaction| transaction.print_transaction }
   end
 
 end

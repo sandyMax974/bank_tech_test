@@ -31,16 +31,15 @@ describe Account do
       subject.deposit(20.00)
       subject.withdrawal(5.00)
       expect(subject.current_balance).to eq(15.00)
-      p subject
     end
     it "adds the transaction to the account transactions collection" do
       expect { subject.withdrawal(5.00) }.to change{ subject.transactions.count }.by(1)
     end
   end
 
-  xdescribe "#print_statement" do
+  describe "#print_statement" do
     it "outputs all the transaction line by line" do
-      message = "date || credit || debit || balance\n06-04-2021||00.00||5.00||20.00\n"
+      message = "date || credit || debit || balance\n06-04-2021||0.00||5.00||20.00\n"
       transaction = Transaction.new("06-04-2021", 20.00, 5.00, 0.00)
       subject.transactions << transaction
       expect{ subject.print_statement }.to output(message).to_stdout
