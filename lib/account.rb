@@ -14,24 +14,12 @@ class Account
 
   def deposit(amount)
     balance_update(amount)
-
-    date = timestamp
-    credit = amount
-    debit = " " # or nil
-    balance = current_balance
-
-    store_transaction(date, balance, debit, credit)
+    store_transaction(timestamp, current_balance, " ", amount)
   end
 
   def withdrawal(amount)
     balance_update(-amount)
-
-    date = timestamp
-    credit = " " # or nil
-    debit = amount
-    balance = current_balance
-
-    store_transaction(date, balance, debit, credit)
+    store_transaction(timestamp, current_balance, amount, " ")
   end
 
   def print_statement
