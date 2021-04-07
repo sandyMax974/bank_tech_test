@@ -23,10 +23,10 @@ class Transaction
   end
 
   def debit_formatting
-    @debit = format('%.2f', @debit).to_s if @debit.is_a?(Float)
+    @debit = format('%.2f', @debit).to_s if @debit.is_a?(Float) || @debit.is_a?(Integer)
   end
 
   def credit_formatting
-    @credit = format('%.2f', @credit).to_s if @credit.is_a?(Float)
+    @credit = format('%.2f', @credit).to_s if @credit.is_a?(Float) || @credit.is_a?(Integer)
   end
 end

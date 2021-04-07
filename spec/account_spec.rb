@@ -3,8 +3,8 @@
 require 'account'
 
 describe Account do
-  let(:transaction) { Transaction.new('06-04-2021', 20.00, 5.00, ' ') }
-  let(:message) { "date || credit || debit || balance\n06-04-2021|| ||5.00||20.00\n" }
+  let(:transaction) { double :transaction, :date => '06-04-2021', :balance => 20.00, :debit => 5.00, :credit => " " }
+  let(:message) { "date || credit || debit || balance\n" }
 
   describe '#current_balance' do
     it 'display the current account balance' do
@@ -43,6 +43,7 @@ describe Account do
   describe '#print_statement' do
     it 'outputs all the transaction line by line' do
       subject.transactions << transaction
+      expect(transaction).to receive(:print_transaction)
       expect { subject.print_statement }.to output(message).to_stdout
     end
   end
