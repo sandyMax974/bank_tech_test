@@ -72,9 +72,12 @@ I want my account data to persist in my computer memory
 * Got blocked by this approach so decided to change tactics and approach it from Account object
 * Now that we have a code base I have a clearer idea of potential edge case and refinement needs
 * Now that we have a working program, I can go back and see if I can refactor - at the moment every part of the program is accessible
+* I was able to extract 4 methods from account: `balance_update`, `store_transaction`, `timestamp` and `statement_header`
 
-- [ ] apply SRP to all existing methods - create methods `balance_update`, `store_transaction`
-- [ ] use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
-- [ ] look for data persistence on local disk
-- [ ] change time formating
+## Difficulties
+
+* use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
+
+I'm finding this diffucult, as I can't test private methods... what would be the best way to go here? I found article talking about using the `send` method, but I also found aticles saying: 
+> There is a mantra in software engineering that says you should not write test coverage for private methods (or functions).
 

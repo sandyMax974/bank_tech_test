@@ -1,5 +1,5 @@
 class Transaction
-  attr_reader :date, :balance, :debit, :credit
+  attr_accessor :date, :balance, :debit, :credit
   
   def initialize(date = nil, balance = nil, debit = nil, credit = nil)
     @date = date 
@@ -9,7 +9,20 @@ class Transaction
   end
 
   def print_transaction
-    puts "#{@date}||#{'%.2f' % @credit}||#{'%.2f' % @debit}||#{'%.2f' % @balance}"
+    debit_formatting
+    credit_formatting
+
+    puts "#{@date}||#{@credit}||#{@debit}||#{'%.2f' % @balance}"
   end
+
+  private
+  
+  def debit_formatting
+     @debit = "#{'%.2f' %  @debit}" if @debit.is_a?(Float)
+  end
+
+  def credit_formatting
+    @credit = "#{'%.2f' %  @credit}" if @credit.is_a?(Float)
+ end
 
 end

@@ -2,9 +2,9 @@ require 'transaction'
 
 describe Transaction do
   let(:today) { Time.now.strftime("%d-%m-%Y") }
-  let(:message) { "#{today}||178.50||0.00||1500.00\n" }
+  let(:message) { "#{today}||178.50|| ||1500.00\n" }
 
-  subject { Transaction.new(today, 1500.00, 0, 178.50)}
+  subject { Transaction.new(today, 1500.00, " ", 178.50)}
 
   it "has a transaction date" do
     expect(subject.date).to eq(today)
@@ -13,7 +13,7 @@ describe Transaction do
     expect(subject.balance).to eq(1500.00)
   end
   it "has a debit amount" do
-    expect(subject.debit).to eq(0)
+    expect(subject.debit).to eq(" ")
   end
   it "has a credit amount" do
     expect(subject.credit).to eq(178.50)
