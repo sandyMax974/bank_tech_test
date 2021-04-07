@@ -3,7 +3,7 @@
 require 'account'
 
 describe Account do
-  let(:transaction) { double :transaction, :date => '06-04-2021', :balance => 20.00, :debit => 5.00, :credit => " " }
+  let(:transaction) { double :transaction, date: '06-04-2021', balance: 20.00, debit: 5.00, credit: ' ' }
   let(:message) { "date || credit || debit || balance\n" }
 
   describe '#current_balance' do

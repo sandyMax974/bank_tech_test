@@ -2,7 +2,7 @@
 
 require 'simplecov'
 SimpleCov.start
-puts "SimpleCov started successfully!"
+puts 'SimpleCov started successfully!'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
