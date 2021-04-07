@@ -76,8 +76,42 @@ I want my account data to persist in my computer memory
 
 ## Difficulties
 
-* use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
+* Use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
 
 I'm finding this diffucult, as I can't test private methods... what would be the best way to go here? I found article talking about using the `send` method, but I also found aticles saying: 
 > There is a mantra in software engineering that says you should not write test coverage for private methods (or functions).
 
+* I would like to not have that many attr_readers but the raises the same problem as the above...
+
+## How to run
+
+```
+$ git clone git@github.com:sandyMax974/bank_tech_test.git
+$ cd bank_tech_test
+$ bundle install
+$ pry
+[1] pry(main)> require './lib/account.rb'
+```
+
+### Usage
+```
+# Creates a new account
+[1] pry(main)> my_account = Account.new
+
+# Deposit an amount onto the account (take float or integer)
+[2] pry(main)> my_account.deposit(1489.50)
+
+# Withdraw an amount from the account (take float or integer)
+[3] pry(main)> my_account.withdrawal(50.00)
+
+# Print an account statement containing all transaction for the current session 
+[4] pry(main)> my_account.print_statement
+
+date || credit || debit || balance
+07-04-2021||1489.50|| ||1489.50
+07-04-2021|| ||50.00||1439.50
+
+# Check the current account balance (not requested)
+[5] pry(main)> my_account.current_balance
+=> 1439.5
+```
