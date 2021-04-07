@@ -95,7 +95,7 @@ I want my account data to persist in my computer memory
 
 * Use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
 
-I'm finding this diffucult, as I can't test private methods... what would be the best way to go here? I found article talking about using the `send` method, but I also found aticles saying: 
+I'm finding this difficult, as I can't test private methods... what would be the best way to go here? I found article talking about using the `send` method, but I also found aticles saying: 
 > There is a mantra in software engineering that says you should not write test coverage for private methods (or functions).
 
 * I would like to not have that many attr_readers but the raises the same problem as the above...
