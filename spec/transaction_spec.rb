@@ -1,25 +1,27 @@
 require 'transaction'
 
 describe Transaction do
+  let(:today) { Time.now.strftime("%d-%m-%Y") }
+  let(:message) { "#{today}||178.50||0.00||1500.00\n" }
+
+  subject { Transaction.new(today, 1500.00, 0, 178.50)}
 
   it "has a transaction date" do
-    expect(subject).to respond_to(:date)
+    expect(subject.date).to eq(today)
   end
   it "has the current account balance after transaction" do
-    expect(subject).to respond_to(:balance)
+    expect(subject.balance).to eq(1500.00)
   end
   it "has a debit amount" do
-    expect(subject).to respond_to(:debit)
+    expect(subject.debit).to eq(0)
   end
   it "has a credit amount" do
-    expect(subject).to respond_to(:credit)
+    expect(subject.credit).to eq(178.50)
   end
 
   describe "#print_transaction" do
     it "print the transaction details in the correct format" do
-      message = "06-04-2021||0.00||5.00||20.00\n"
-      transaction = Transaction.new("06-04-2021", 20.00, 5.00, 0.00)
-      expect{ transaction.print_transaction }.to output(message).to_stdout
+      expect{ subject.print_transaction }.to output(message).to_stdout
     end
   end
 end

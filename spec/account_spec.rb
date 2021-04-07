@@ -45,4 +45,10 @@ describe Account do
       expect{ subject.print_statement }.to output(message).to_stdout
     end
   end
+
+  describe "#store_transaction" do
+    it "add the new transaction to the account transactions collection" do
+      expect{ subject.store_transaction("06-04-2021", 20.00, 5.00, 0.00) }.to change{ subject.transactions.count }.by(1)
+    end
+  end
 end

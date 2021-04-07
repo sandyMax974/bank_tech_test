@@ -63,7 +63,8 @@ I want my account data to persist in my computer memory
 
 ### Edge cases and questions
 * Can the account go into overdraft? How much?
-* Is the user ave going to input something else than Intg or Float?
+* Is the user ever going to input something else than Intg or Float?
+* Is there a maximum amount on the account?
 
 ## Process
 
@@ -74,5 +75,6 @@ I want my account data to persist in my computer memory
 
 - [ ] apply SRP to all existing methods - create methods `balance_update`, `store_transaction`
 - [ ] use private methods - user should only be able to run `#deposit`, `#withdrawal` and `#print_statement`
-- [ ] change time formating
 - [ ] look for data persistence on local disk
+- [ ] change time formating
+
