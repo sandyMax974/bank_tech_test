@@ -26,7 +26,7 @@ class Account
 
   def print_statement
     statement_header
-    @transactions.each(&:print_transaction)
+    @transactions.reverse.each(&:print_transaction)
   end
 
   private
