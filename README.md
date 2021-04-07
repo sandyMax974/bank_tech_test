@@ -1,4 +1,21 @@
-# Tech Test: Bank
+# Tech Test: Bank 
+![laguage-ruby](https://img.shields.io/badge/Language-ruby%202.6.5-red)
+![current-coverage](https://img.shields.io/badge/Current%20coverage-97.87%25-brightgreen)
+![status-working](https://img.shields.io/badge/Status-working-green)
+
+- [Tech Test: Bank](#tech-test-bank)
+  - [Specifications](#specifications)
+    - [Requirements](#requirements)
+    - [Acceptance criteria](#acceptance-criteria)
+    - [User Stories](#user-stories)
+  - [Modelling](#modelling)
+    - [Edge cases and questions](#edge-cases-and-questions)
+  - [Process](#process)
+  - [Difficulties](#difficulties)
+  - [How to run](#how-to-run)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [How to test](#how-to-test)
 
 ## Specifications
 
@@ -85,6 +102,7 @@ I'm finding this diffucult, as I can't test private methods... what would be the
 
 ## How to run
 
+### Install
 ```
 $ git clone git@github.com:sandyMax974/bank_tech_test.git
 $ cd bank_tech_test
@@ -114,4 +132,11 @@ date || credit || debit || balance
 # Check the current account balance (not requested)
 [5] pry(main)> my_account.current_balance
 => 1439.5
+```
+
+### How to test
+```
+$ cd bank_tech_test
+$ bundle install
+$ rspec
 ```

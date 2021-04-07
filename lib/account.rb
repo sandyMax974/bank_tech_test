@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'transaction'
 
 class Account
@@ -14,23 +16,23 @@ class Account
 
   def deposit(amount)
     balance_update(amount)
-    store_transaction(timestamp, current_balance, " ", amount)
+    store_transaction(timestamp, current_balance, ' ', amount)
   end
 
   def withdrawal(amount)
     balance_update(-amount)
-    store_transaction(timestamp, current_balance, amount, " ")
+    store_transaction(timestamp, current_balance, amount, ' ')
   end
 
   def print_statement
     statement_header
-    @transactions.each { |transaction| transaction.print_transaction }
+    @transactions.each(&:print_transaction)
   end
 
   private
 
   def timestamp
-    Time.now.strftime("%d-%m-%Y")
+    Time.now.strftime('%d-%m-%Y')
   end
 
   def store_transaction(date, balance, debit, credit)
@@ -38,7 +40,7 @@ class Account
   end
 
   def statement_header
-    header = "date || credit || debit || balance"
+    header = 'date || credit || debit || balance'
     puts header
   end
 

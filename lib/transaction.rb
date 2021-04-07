@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class Transaction
   attr_accessor :date, :balance, :debit, :credit
-  
+
   def initialize(date = nil, balance = nil, debit = nil, credit = nil)
-    @date = date 
+    @date = date
     @balance = balance
-    @debit = debit 
-    @credit = credit 
+    @debit = debit
+    @credit = credit
   end
 
   def print_transaction
@@ -17,15 +19,14 @@ class Transaction
   private
 
   def row_formatting
-    puts "#{@date}||#{@credit}||#{@debit}||#{'%.2f' % @balance}"
+    puts "#{@date}||#{@credit}||#{@debit}||#{format('%.2f', @balance)}"
   end
 
   def debit_formatting
-     @debit = "#{'%.2f' %  @debit}" if @debit.is_a?(Float)
+    @debit = format('%.2f', @debit).to_s if @debit.is_a?(Float)
   end
 
   def credit_formatting
-    @credit = "#{'%.2f' %  @credit}" if @credit.is_a?(Float)
- end
-
+    @credit = format('%.2f', @credit).to_s if @credit.is_a?(Float)
+  end
 end
