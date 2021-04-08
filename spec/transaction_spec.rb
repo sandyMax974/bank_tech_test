@@ -4,7 +4,7 @@ require 'transaction'
 
 describe Transaction do
   let(:today) { Time.now.strftime('%d-%m-%Y') }
-  let(:message) { "#{today}||178.50||||1500.00\n" }
+  let(:message) { "#{today} || 178.50 || || 1500.00\n" }
 
   subject { Transaction.new(today, 1500.00, nil, 178.50) }
 

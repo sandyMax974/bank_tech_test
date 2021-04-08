@@ -17,22 +17,22 @@ class Transaction
   private
 
   def row_formatting(debit_format, credit_format)
-    puts "#{@date}||#{credit_format}||#{debit_format}||#{format('%.2f', @balance)}"
+    puts "#{@date} ||#{credit_format}||#{debit_format}|| #{format('%.2f', @balance)}"
   end
 
   def debit_formatting
     if @debit.is_a?(Float) || @debit.is_a?(Integer)
-      format('%.2f', @debit).to_s
+      " #{format('%.2f', @debit)} "
     else
-      @debit
+      "#{@debit} "
     end
   end
 
   def credit_formatting
     if @credit.is_a?(Float) || @credit.is_a?(Integer)
-      format('%.2f', @credit).to_s
+      " #{format('%.2f', @credit)} "
     else
-      @credit
+      "#{@credit} "
     end
   end
 end

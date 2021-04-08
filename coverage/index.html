@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-08T12:46:52+01:00">2021-04-08T12:46:52+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-08T13:14:42+01:00">2021-04-08T13:14:42+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1097,7 +1097,7 @@
 
             
 
-            <code class="ruby">    puts &quot;#{@date}||#{credit_format}||#{debit_format}||#{format(&#39;%.2f&#39;, @balance)}&quot;</code>
+            <code class="ruby">    puts &quot;#{@date} ||#{credit_format}||#{debit_format}|| #{format(&#39;%.2f&#39;, @balance)}&quot;</code>
           </li>
         </div>
       
@@ -1152,7 +1152,7 @@
 
             
 
-            <code class="ruby">      format(&#39;%.2f&#39;, @debit).to_s</code>
+            <code class="ruby">      &quot; #{format(&#39;%.2f&#39;, @debit)} &quot;</code>
           </li>
         </div>
       
@@ -1174,7 +1174,7 @@
 
             
 
-            <code class="ruby">      @debit</code>
+            <code class="ruby">      &quot;#{@debit} &quot;</code>
           </li>
         </div>
       
@@ -1240,7 +1240,7 @@
 
             
 
-            <code class="ruby">      format(&#39;%.2f&#39;, @credit).to_s</code>
+            <code class="ruby">      &quot; #{format(&#39;%.2f&#39;, @credit)} &quot;</code>
           </li>
         </div>
       
@@ -1262,7 +1262,7 @@
 
             
 
-            <code class="ruby">      @credit</code>
+            <code class="ruby">      &quot;#{@credit} &quot;</code>
           </li>
         </div>
       
@@ -2072,7 +2072,7 @@
 
             
 
-            <code class="ruby">  let(:message) { &quot;#{today}||178.50||||1500.00\n&quot; }</code>
+            <code class="ruby">  let(:message) { &quot;#{today} || 178.50 || || 1500.00\n&quot; }</code>
           </li>
         </div>
       

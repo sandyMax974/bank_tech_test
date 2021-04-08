@@ -35,10 +35,10 @@
 * When she prints her bank statement
 * Then she would see
 ```
-date       || credit  || debit  || balance
-14/01/2012 ||         || 500.00 || 2500.00
-13/01/2012 || 2000.00 ||        || 3000.00
-10/01/2012 || 1000.00 ||        || 1000.00
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
 ```
 
 ### User Stories
@@ -157,3 +157,5 @@ $ rspec
 
 > Balance is simply a sum of all deposits and transactions. Is there a way we can surface the balance when needed without explicitly keeping track of it?
 * I've removed the @balance attribute and created function that iterate through all existing transactions and calculate the current account balance
+
+> When you look at the acceptance criteria, how do you think you could change your output to look more like that? Is there a way we could find the lengths of dates and currencies and use that to format the table?
