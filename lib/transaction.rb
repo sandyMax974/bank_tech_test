@@ -11,22 +11,28 @@ class Transaction
   end
 
   def print_transaction
-    debit_formatting
-    credit_formatting
-    row_formatting
+    row_formatting(debit_formatting, credit_formatting)
   end
 
   private
 
-  def row_formatting
-    puts "#{@date}||#{@credit}||#{@debit}||#{format('%.2f', @balance)}"
+  def row_formatting(debit_format, credit_format)
+    puts "#{@date}||#{credit_format}||#{debit_format}||#{format('%.2f', @balance)}"
   end
 
   def debit_formatting
-    @debit = format('%.2f', @debit).to_s if @debit.is_a?(Float) || @debit.is_a?(Integer)
+    if @debit.is_a?(Float) || @debit.is_a?(Integer)
+      format('%.2f', @debit).to_s      
+    else
+      @debit
+    end
   end
 
   def credit_formatting
-    @credit = format('%.2f', @credit).to_s if @credit.is_a?(Float) || @credit.is_a?(Integer)
+    if @credit.is_a?(Float) || @credit.is_a?(Integer)
+      format('%.2f', @credit).to_s
+    else
+      @credit
+    end
   end
 end

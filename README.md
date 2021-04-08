@@ -143,9 +143,17 @@ $ cd bank_tech_test
 $ bundle install
 $ rspec
 ```
+
 ## Feedbacks
 
 > We define an accessor function called current_balance, but we already have an attr_reader for @balance, this function is redundant
 * I've decided to keep the accessor function and remove the attr_reader - **would that be a better choice?**
 
 > We store a non empty string in our transaction. Is there another value we could set this to to be more clear?
+* I've amended `deposit` and `withdrawal` to pass nil if there was no value, which definitely makes more sense
+
+> We are actually changing the value of debit and credit when we print that transaction
+* I've changed `debit_formatting` and `credit_formatting` to create a new variable to print, that way I don't have to mess around with the actual credit/debit value
+
+> Balance is simply a sum of all deposits and transactions. Is there a way we can surface the balance when needed without explicitly keeping track of it?
+* I've removed the @balance attribute and created function that iterate through all existing transactions and calculate the current account balance

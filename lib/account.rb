@@ -6,22 +6,19 @@ class Account
   attr_reader :transactions
 
   def initialize
-    @balance = 0
     @transactions = []
   end
 
   def current_balance
-    @balance
+    total_credit - total_debit
   end
 
   def deposit(amount)
-    balance_update(amount)
-    store_transaction(timestamp, current_balance, nil , amount)
+    store_transaction(timestamp, balance_after_transaction(amount), nil, amount)
   end
 
   def withdrawal(amount)
-    balance_update(-amount)
-    store_transaction(timestamp, current_balance, amount, nil)
+    store_transaction(timestamp, balance_after_transaction(-amount), amount, nil)
   end
 
   def print_statement
@@ -44,7 +41,23 @@ class Account
     puts header
   end
 
-  def balance_update(amount)
-    @balance += amount
+  def total_credit
+    total_credit = 0
+    @transactions.each do |transaction|
+      total_credit += transaction.credit if !transaction.credit.nil?
+    end
+    total_credit
+  end
+
+  def total_debit
+    total_debit = 0
+    @transactions.each do |transaction|
+      total_debit += transaction.debit if !transaction.debit.nil?
+    end
+    total_debit
+  end
+
+  def balance_after_transaction(amount)
+    current_balance + amount
   end
 end
