@@ -135,7 +135,7 @@ date || credit || debit || balance
 => 1439.5
 ```
 
-![programm](https://github.com/sandyMax974/bank_tech_test/blob/main/images/Screenshot%202021-04-07%20at%2014.56.28.png)
+![programm](https://github.com/sandyMax974/bank_tech_test/blob/main/images/Screenshot%202021-04-08%20at%2015.58.50.png)
 
 ### How to test
 ```
