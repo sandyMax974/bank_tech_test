@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-07T14:44:29+01:00">2021-04-07T14:44:29+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-08T10:44:08+01:00">2021-04-08T10:44:08+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -219,7 +219,7 @@
 
             
 
-            <code class="ruby">  attr_reader :balance, :transactions</code>
+            <code class="ruby">  attr_reader :transactions</code>
           </li>
         </div>
       
@@ -362,7 +362,7 @@
 
             
 
-            <code class="ruby">    store_transaction(timestamp, current_balance, &#39; &#39;, amount)</code>
+            <code class="ruby">    store_transaction(timestamp, current_balance, nil , amount)</code>
           </li>
         </div>
       
@@ -417,7 +417,7 @@
 
             
 
-            <code class="ruby">    store_transaction(timestamp, current_balance, amount, &#39; &#39;)</code>
+            <code class="ruby">    store_transaction(timestamp, current_balance, amount, nil)</code>
           </li>
         </div>
       
@@ -472,7 +472,7 @@
 
             
 
-            <code class="ruby">    @transactions.each(&amp;:print_transaction)</code>
+            <code class="ruby">    @transactions.reverse.each(&amp;:print_transaction)</code>
           </li>
         </div>
       
@@ -1183,7 +1183,7 @@
 
             
 
-            <code class="ruby">  let(:transaction) { double :transaction, :date =&gt; &#39;06-04-2021&#39;, :balance =&gt; 20.00, :debit =&gt; 5.00, :credit =&gt; &quot; &quot; }</code>
+            <code class="ruby">  let(:transaction) { double :transaction, date: &#39;06-04-2021&#39;, balance: 20.00, debit: 5.00, credit: &#39; &#39; }</code>
           </li>
         </div>
       
@@ -1194,7 +1194,7 @@
 
             
 
-            <code class="ruby">  let(:message) { &quot;date || credit || debit || balance\n&quot; } # 06-04-2021|| ||5.00||20.00\n</code>
+            <code class="ruby">  let(:message) { &quot;date || credit || debit || balance\n&quot; }</code>
           </li>
         </div>
       
@@ -1863,7 +1863,7 @@
 
             
 
-            <code class="ruby">  let(:message) { &quot;#{today}||178.50|| ||1500.00\n&quot; }</code>
+            <code class="ruby">  let(:message) { &quot;#{today}||178.50||||1500.00\n&quot; }</code>
           </li>
         </div>
       
@@ -1885,7 +1885,7 @@
 
             
 
-            <code class="ruby">  subject { Transaction.new(today, 1500.00, &#39; &#39;, 178.50) }</code>
+            <code class="ruby">  subject { Transaction.new(today, 1500.00, nil , 178.50) }</code>
           </li>
         </div>
       
@@ -1984,7 +1984,7 @@
 
             
 
-            <code class="ruby">    expect(subject.debit).to eq(&#39; &#39;)</code>
+            <code class="ruby">    expect(subject.debit).to eq(nil)</code>
           </li>
         </div>
       

@@ -3,7 +3,7 @@
 require_relative 'transaction'
 
 class Account
-  attr_reader :balance, :transactions
+  attr_reader :transactions
 
   def initialize
     @balance = 0
@@ -16,12 +16,12 @@ class Account
 
   def deposit(amount)
     balance_update(amount)
-    store_transaction(timestamp, current_balance, ' ', amount)
+    store_transaction(timestamp, current_balance, nil , amount)
   end
 
   def withdrawal(amount)
     balance_update(-amount)
-    store_transaction(timestamp, current_balance, amount, ' ')
+    store_transaction(timestamp, current_balance, amount, nil)
   end
 
   def print_statement

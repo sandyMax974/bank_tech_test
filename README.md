@@ -16,6 +16,7 @@
     - [Install](#install)
     - [Usage](#usage)
     - [How to test](#how-to-test)
+  - [Feedbacks](#feedbacks)
 
 ## Specifications
 
@@ -142,3 +143,9 @@ $ cd bank_tech_test
 $ bundle install
 $ rspec
 ```
+## Feedbacks
+
+> We define an accessor function called current_balance, but we already have an attr_reader for @balance, this function is redundant
+* I've decided to keep the accessor function and remove the attr_reader - **would that be a better choice?**
+
+> We store a non empty string in our transaction. Is there another value we could set this to to be more clear?
