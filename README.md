@@ -101,6 +101,24 @@ I'm finding this difficult, as I can't test private methods... what would be the
 
 * I would like to not have that many attr_readers but the raises the same problem as the above...
 
+## Feedbacks
+
+> We define an accessor function called current_balance, but we already have an attr_reader for @balance, this function is redundant
+* I've decided to keep the accessor function and remove the attr_reader - **would that be a better choice?**
+
+> We store a non empty string in our transaction. Is there another value we could set this to to be more clear?
+* I've amended `deposit` and `withdrawal` to pass nil if there was no value, which definitely makes more sense
+
+> We are actually changing the value of debit and credit when we print that transaction
+* I've changed `debit_formatting` and `credit_formatting` to create a new variable to print, that way I don't have to mess around with the actual credit/debit value
+
+> Balance is simply a sum of all deposits and transactions. Is there a way we can surface the balance when needed without explicitly keeping track of it?
+* I've removed the @balance attribute and created function that iterate through all existing transactions and calculate the current account balance
+
+> I wonder if there is a way you can double the print_statement function in spec/account_spec.rb to check that we print the whole table correctly, rather than just the header
+* There is a test in account_spec checking that the header is well formatted and printed, there is also a test in transaction_spec checking that each transaction is printing itself correctly. It seems that trying to test the full feature using mock is an unecessary complication. 
+* Instead I decided to create a feature_spec.rb , where the tests are not isolated by design so that I can check that all the different classes work together and produce the expected outcome.
+
 ## How to run
 
 ### Install
@@ -143,22 +161,3 @@ $ cd bank_tech_test
 $ bundle install
 $ rspec
 ```
-
-## Feedbacks
-
-> We define an accessor function called current_balance, but we already have an attr_reader for @balance, this function is redundant
-* I've decided to keep the accessor function and remove the attr_reader - **would that be a better choice?**
-
-> We store a non empty string in our transaction. Is there another value we could set this to to be more clear?
-* I've amended `deposit` and `withdrawal` to pass nil if there was no value, which definitely makes more sense
-
-> We are actually changing the value of debit and credit when we print that transaction
-* I've changed `debit_formatting` and `credit_formatting` to create a new variable to print, that way I don't have to mess around with the actual credit/debit value
-
-> Balance is simply a sum of all deposits and transactions. Is there a way we can surface the balance when needed without explicitly keeping track of it?
-* I've removed the @balance attribute and created function that iterate through all existing transactions and calculate the current account balance
-
-> I wonder if there is a way you can double the print_statement function in spec/account_spec.rb to check that we print the whole table correctly, rather than just the header
-* There is a test in account_spec checking that the header is well formatted and printed, there is also a test in transaction_spec checking that each transaction is printing itself correctly. It seems that trying to test the full feature using mock is an unecessary complication. 
-* Instead I decided to create a feature_spec.rb , where the tests are not isolated by design so that I can check that all the different classes work together and produce the expected outcome.
- 
