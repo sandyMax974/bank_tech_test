@@ -54,10 +54,10 @@ As a user
 I want to be able to see the time and date for all transactions √
 
 As a user
-I want to be able to see statement for my account with date, amount, balance √
+I want to be able to see statement for my account with date, amount, balance print in descending order √
 
 As a user
-I want my account data to persist in my computer memory
+I want my account data to persist during the session √
 ```
 
 ## Modelling 
@@ -127,8 +127,8 @@ $ pry
 [4] pry(main)> my_account.print_statement
 
 date || credit || debit || balance
-07-04-2021||1489.50|| ||1489.50
-07-04-2021|| ||50.00||1439.50
+07-04-2021 || 1489.50 || || 1489.50
+07-04-2021 || || 50.00 || 1439.50
 
 # Check the current account balance (not requested)
 [5] pry(main)> my_account.current_balance
@@ -158,4 +158,7 @@ $ rspec
 > Balance is simply a sum of all deposits and transactions. Is there a way we can surface the balance when needed without explicitly keeping track of it?
 * I've removed the @balance attribute and created function that iterate through all existing transactions and calculate the current account balance
 
-> When you look at the acceptance criteria, how do you think you could change your output to look more like that? Is there a way we could find the lengths of dates and currencies and use that to format the table?
+> I wonder if there is a way you can double the print_statement function in spec/account_spec.rb to check that we print the whole table correctly, rather than just the header
+* There is a test in account_spec checking that the header is well formatted and printed, there is also a test in transaction_spec checking that each transaction is printing itself correctly. It seems that trying to test the full feature using mock is an unecessary complication. 
+* Instead I decided to create a feature_spec.rb , where the tests are not isolated by design so that I can check that all the different classes work together and produce the expected outcome.
+ 
