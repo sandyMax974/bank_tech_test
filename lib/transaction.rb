@@ -22,7 +22,7 @@ class Transaction
 
   def debit_formatting
     if @debit.is_a?(Float) || @debit.is_a?(Integer)
-      format('%.2f', @debit).to_s      
+      format('%.2f', @debit).to_s
     else
       @debit
     end

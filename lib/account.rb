@@ -44,7 +44,7 @@ class Account
   def total_credit
     total_credit = 0
     @transactions.each do |transaction|
-      total_credit += transaction.credit if !transaction.credit.nil?
+      total_credit += transaction.credit unless transaction.credit.nil?
     end
     total_credit
   end
@@ -52,7 +52,7 @@ class Account
   def total_debit
     total_debit = 0
     @transactions.each do |transaction|
-      total_debit += transaction.debit if !transaction.debit.nil?
+      total_debit += transaction.debit unless transaction.debit.nil?
     end
     total_debit
   end
