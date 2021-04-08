@@ -12,11 +12,11 @@
     - [Edge cases and questions](#edge-cases-and-questions)
   - [Process](#process)
   - [Difficulties](#difficulties)
+  - [Feedbacks](#feedbacks)
   - [How to run](#how-to-run)
     - [Install](#install)
     - [Usage](#usage)
     - [How to test](#how-to-test)
-  - [Feedbacks](#feedbacks)
 
 ## Specifications
 
