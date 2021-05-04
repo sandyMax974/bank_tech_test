@@ -14,11 +14,11 @@ class Account
   end
 
   def deposit(amount)
-    store_transaction(timestamp, balance_after_transaction(amount), nil, amount)
+    store_transaction(balance_after_transaction(amount), nil, amount)
   end
 
   def withdrawal(amount)
-    store_transaction(timestamp, balance_after_transaction(-amount), amount, nil)
+    store_transaction(balance_after_transaction(-amount), amount, nil)
   end
 
   def print_statement
@@ -28,12 +28,8 @@ class Account
 
   private
 
-  def timestamp
-    Time.now.strftime('%d-%m-%Y')
-  end
-
-  def store_transaction(date, balance, debit, credit)
-    @transactions << Transaction.new(date, balance, debit, credit)
+  def store_transaction(balance, debit, credit)
+    @transactions << Transaction.new(balance, debit, credit)
   end
 
   def statement_header

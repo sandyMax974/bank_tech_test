@@ -12,11 +12,11 @@
     - [Edge cases and questions](#edge-cases-and-questions)
   - [Process](#process)
   - [Difficulties](#difficulties)
+  - [Coaches Feedbacks](#coaches-feedbacks)
   - [How to run](#how-to-run)
     - [Install](#install)
     - [Usage](#usage)
     - [How to test](#how-to-test)
-  - [Feedbacks](#feedbacks)
 
 ## Specifications
 
@@ -101,7 +101,7 @@ I'm finding this difficult, as I can't test private methods... what would be the
 
 * I would like to not have that many attr_readers but the raises the same problem as the above...
 
-## Feedbacks
+## Coaches Feedbacks
 
 > We define an accessor function called current_balance, but we already have an attr_reader for @balance, this function is redundant
 * I've decided to keep the accessor function and remove the attr_reader - **would that be a better choice?**

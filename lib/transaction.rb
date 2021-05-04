@@ -3,8 +3,8 @@
 class Transaction
   attr_accessor :date, :balance, :debit, :credit
 
-  def initialize(date = nil, balance = nil, debit = nil, credit = nil)
-    @date = date
+  def initialize(balance = nil, debit = nil, credit = nil)
+    @date = timestamp
     @balance = balance
     @debit = debit
     @credit = credit
@@ -34,5 +34,9 @@ class Transaction
     else
       "#{@credit} "
     end
+  end
+
+  def timestamp
+    Time.now.strftime('%d-%m-%Y')
   end
 end
