@@ -1,6 +1,6 @@
 # Tech Test: Bank 
 ![laguage-ruby](https://img.shields.io/badge/Language-ruby%202.6.5-red)
-![current-coverage](https://img.shields.io/badge/Current%20coverage-97.87%25-brightgreen)
+![current-coverage](https://img.shields.io/badge/Current%20coverage-98.2%25-brightgreen)
 ![status-working](https://img.shields.io/badge/Status-working-green)
 
 - [Tech Test: Bank](#tech-test-bank)
