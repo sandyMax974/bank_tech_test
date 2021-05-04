@@ -26,6 +26,7 @@ class Account
     @transactions.reverse.each(&:print_transaction)
   end
 
+
   private
 
   def store_transaction(balance, debit, credit)
@@ -54,6 +55,6 @@ class Account
   end
 
   def balance_after_transaction(amount)
-    current_balance + amount
+      current_balance + amount
   end
 end
